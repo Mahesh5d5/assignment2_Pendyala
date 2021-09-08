@@ -28,4 +28,23 @@ Guttikonda Bilam, also known as Guthikonda Bilam, is a historic cave and a hill 
    * Billam.
    **[LinkAboutme.md](Aboutme.md)**
 
-   
+   ----
+   # creating a Table foods and drinks
+**Introduction:**
+ The following is to create a table with atleast 4 food/drinks that you would recommend someone try. Include a short paragraph that introduces the table.
+
+|Mandatory   |fav1            |fav2             |fav3             |fav4            |
+|:--------:  |:---------:     |:---------:      |:----------:     |:----------:    |
+|Food        |Mandi           |ghee idly        |puri             |Coke            |
+|Location    |Guntur          |piduguralla      |Vijaywada        |Any             |
+|Amount      |800             |80               |30               |100             |
+
+-----
+# Section of Quotes
+>"Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less."
+>*Author:* Marie curie. 
+>“The truth is you don't know what is going to happen tomorrow. Life is a crazy ride, and nothing is guaranteed.”
+>*Author:* Eminem.
+
+----
+# Heading a new section for code fancing
