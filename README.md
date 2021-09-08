@@ -47,4 +47,47 @@ Guttikonda Bilam, also known as Guthikonda Bilam, is a historic cave and a hill 
 >*Author:* Eminem.
 
 ----
-# Heading a new section for code fancing
+# Heading a new section for code fencing
+In geometry, the convex hull or convex envelope or convex closure of a shape is the smallest convex set that contains it. The convex hull may be defined either as the intersection of all convex sets containing a given subset of a Euclidean space, or equivalently as the set of all convex combinations of points in the subset. For a bounded subset of the plane, the convex hull may be visualized as the shape enclosed by a rubber band stretched around the subset.for link clivk here[convex hull or convex envelope](https://en.wikipedia.org/wiki/Convex_hull)
+
+
+```
+struct pt {
+    double x, y;
+};
+
+bool cmp(pt a, pt b) {
+    return a.x < b.x || (a.x == b.x && a.y < b.y);
+}
+
+bool cw(pt a, pt b, pt c) {
+    return a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y) < 0;
+}
+
+bool ccw(pt a, pt b, pt c) {
+    return a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y) > 0;
+}
+
+void convex_hull(vector<pt>& a) {
+    if (a.size() == 1)
+        return;
+
+    sort(a.begin(), a.end(), &cmp);
+    pt p1 = a[0], p2 = a.back();
+    vector<pt> up, down;
+    up.push_back(p1);
+    down.push_back(p1);
+    for (int i = 1; i < (int)a.size(); i++) {
+        if (i == a.size() - 1 || cw(p1, a[i], p2)) {
+            while (up.size() >= 2 && !cw(up[up.size()-2], up[up.size()-1], a[i]))
+                up.pop_back();
+            up.push_back(a[i]);
+        }
+        if (i == a.size() - 1 || ccw(p1, a[i], p2)) {
+            while(down.size() >= 2 && !ccw(down[down.size()-2], down[down.size()-1], a[i]))
+                down.pop_back();
+            down.push_back(a[i]);
+        }
+    }
+```
+[Code for Convex hull](https://cp-algorithms.com/geometry/grahams-scan-convex-hull.html)
